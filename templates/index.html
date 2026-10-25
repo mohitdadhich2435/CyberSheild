@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CyberShield | Security Operations</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><span class="brand-icon">⬡</span><div><strong>CyberShield</strong><small>SECURITY OPERATIONS CENTER</small></div></div>
+  <span class="status"><i></i> LAB MODE</span>
+</header>
+<main class="container">
+  <section class="hero">
+    <div><p class="eyebrow">ENTERPRISE SECURITY TOOLKIT</p><h1>Security visibility,<br><em>without the noise.</em></h1>
+    <p class="intro">Audit basic web security headers, inspect sample logs, and review actionable findings from one workspace.</p></div>
+    <div class="hero-card"><span class="hero-symbol">⌁</span><p>DEFENSE IN DEPTH</p><strong>Detect · Investigate · Improve</strong></div>
+  </section>
+  <section class="metrics">
+    <div class="metric"><span>MODULES ONLINE</span><strong>02</strong><small>Web audit + log analysis</small></div>
+    <div class="metric"><span>SCAN MODE</span><strong>Passive</strong><small>No exploit attempts</small></div>
+    <div class="metric"><span>ENVIRONMENT</span><strong>Local lab</strong><small>Educational prototype</small></div>
+  </section>
+  <section class="grid">
+    <article class="panel">
+      <div class="panel-head"><div><p class="eyebrow">MODULE 01</p><h2>Web security header audit</h2></div><span class="tag">PASSIVE</span></div>
+      <p class="muted">Check common HTTP security headers on a website you own or have permission to assess.</p>
+      <form id="scan-form"><label for="url">Target URL</label><div class="input-row"><input id="url" type="url" placeholder="https://example.com" required><button type="submit">Run audit <span>→</span></button></div></form>
+      <div id="scan-output" class="output empty">Your findings will appear here.</div>
+    </article>
+    <article class="panel">
+      <div class="panel-head"><div><p class="eyebrow">MODULE 02</p><h2>Log threat triage</h2></div><span class="tag purple">RULE-BASED</span></div>
+      <p class="muted">Paste sample authentication logs to identify repeated failures and configured suspicious patterns.</p>
+      <label for="logs">Log sample</label><textarea id="logs" rows="7" placeholder="Oct 25 09:10:01 host sshd: Failed password for invalid user admin..."></textarea>
+      <div class="button-row"><button id="sample" class="secondary">Load sample</button><button id="analyze">Analyze logs <span>→</span></button></div>
+      <div id="log-output" class="output empty">Triage results will appear here.</div>
+    </article>
+  </section>
+  <section class="note"><strong>Responsible use</strong><p>Only scan systems you own or are explicitly authorized to test. This educational prototype is not a substitute for a professional security assessment. Results can be incomplete or produce false positives.</p></section>
+  <footer>CYBERSHIELD · EDUCATIONAL MVP · BUILT WITH PYTHON + FLASK</footer>
+</main>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body></html>
